@@ -5,7 +5,13 @@ import java.time.LocalDateTime
 import java.time.ZoneOffset
 
 fun main(){
-    println(Hamming.compute("GGACTGAAATCTG", "GGACTGAAATCTG"))
+    val matrixAsString = """
+            1 2 3
+            4 5 6
+            7 8 9
+            """.trimIndent()
+    val matrixAsSingle = "1"
+
 }
 object Hamming {
     var difference = 0
@@ -39,9 +45,11 @@ class Matrix(private val matrixAsString: String) {
     private val rows = matrixAsString.split("\n")
     fun column(colNr: Int): List<Int> {
         val colNum = colNr - 1
-        //if(rows.count(.map {rows.map{it.split(" ").map{it.toInt()}[colNum]}}
-       // else
-        //    answer.map{rows.map { it.toInt() }}
+        var answer = emptyList<Int>()
+        if(rows.count()>=2)
+            answer.map {rows.forEach{it.split(" ").map{it.toInt()}[colNum]}}
+        else
+            answer.map{rows.map { it.toInt() }}
         return answer
     }
 

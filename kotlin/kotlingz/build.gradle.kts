@@ -12,6 +12,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.junit.jupiter:junit-jupiter:5.8.1")
     testImplementation(kotlin("test"))
     implementation("com.squareup.okhttp3:okhttp:4.9.0")
 }
