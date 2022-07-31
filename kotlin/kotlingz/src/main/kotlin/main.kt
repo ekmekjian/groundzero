@@ -35,3 +35,18 @@ class Gigasecond (val inputDate: LocalDateTime?){
 
 
 }
+class Matrix(private val matrixAsString: String) {
+    private val rows = matrixAsString.split("\n")
+    fun column(colNr: Int): List<Int> {
+        val colNum = colNr - 1
+        //if(rows.count(.map {rows.map{it.split(" ").map{it.toInt()}[colNum]}}
+       // else
+        //    answer.map{rows.map { it.toInt() }}
+        return answer
+    }
+
+    fun row(rowNr: Int): List<Int> {
+        val answer = rows[rowNr-1].split(" ").map{ it.toInt()}
+        return answer
+    }
+}
