@@ -6,12 +6,17 @@ import java.time.ZoneOffset
 
 fun main(){
     val matrixAsString = """
-            1 2 3
-            4 5 6
-            7 8 9
+            89 1903   3
+            18    3   1
+             9    4 800
             """.trimIndent()
+    val stringSplitbyNl = matrixAsString.split("\n")
     val matrixAsSingle = "1"
-
+   // println(Matrix(matrixAsString).column(2))
+    for(row in stringSplitbyNl){
+       println(row.replace("\\s+".toRegex()," ").trim().split(" "))
+     //  println(row.replace("\\s+".toRegex()," ").split(" ").map { it.toInt() }[1])
+    }
 }
 object Hamming {
     var difference = 0
@@ -45,11 +50,10 @@ class Matrix(private val matrixAsString: String) {
     private val rows = matrixAsString.split("\n")
     fun column(colNr: Int): List<Int> {
         val colNum = colNr - 1
-        var answer = emptyList<Int>()
-        if(rows.count()>=2)
-            answer.map {rows.forEach{it.split(" ").map{it.toInt()}[colNum]}}
-        else
-            answer.map{rows.map { it.toInt() }}
+        val answer = mutableListOf<Int>()
+        for (row in rows){
+            answer.add(row.replace("\\s+".toRegex()," ").trim().split(" ").map { it.toInt() }[colNum])
+        }
         return answer
     }
 
