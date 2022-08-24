@@ -62,3 +62,18 @@ class Matrix(private val matrixAsString: String) {
         return answer
     }
 }
+class Dna(dnaString: String) {
+    // TODO: Implement proper constructor
+    init {
+        // TODO: check if the input string has any incorrect characters
+    }
+    val dnaArr = dnaString.toCharArray()
+    var answer = mutableMapOf(Pair('A', 0),Pair('C', 0),Pair('G',0),Pair('T',0))
+    val nucleotideCounts: Map<Char, Int>
+        get() {
+            dnaArr.forEach { ch ->
+                   answer.put(ch, dnaArr.count { it == ch })
+            }
+            return answer
+        }
+}
