@@ -77,3 +77,20 @@ class Dna(dnaString: String) {
             return answer
         }
 }
+class BinarySearchTree<T : Comparable<T>> {
+    data class Node<T>(val data: Node<T>, val right: Node<T>, val left: Node<T> )
+    var root: Node<T>? = null
+    fun insert(value: T) {
+        // TODO: check if root is null
+        // TODO: if not empty find if value is bigger or small than root or current node
+        // TODO: if smaller then value is set to left node if bigger then value i set to right node
+    }
+    fun asSortedList(): List<T> {
+        TODO("Delete this statement and write your own implementation.")
+    }
+    fun asLevelOrderList(): List<T> {
+        TODO("Delete this statement and write your own implementation.")
+    }
+
+}
+
